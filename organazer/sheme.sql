@@ -1,7 +1,0 @@
-CREATE TABLE IF NOT EXIST organizer (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    task_name TEXT NOT NULL,
-    task_content TEXT NOT NULL DEFAULT '',
-    task_status TEXT NOT NULL DEFAULT 'Не выполнено',
-    to_do_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP 
-)
