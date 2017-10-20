@@ -98,7 +98,17 @@ def action_change():
         print('Статус задачи изменен')
 
 
-@menu_action('7', 'Выйти')
+@menu_action('7', 'Показать меню')
+def action_show_menu():
+    menu = []
+
+    for cmd, action in action.items():
+        menu.append('{}. {}'.format(cmd, action_name))
+
+    print('\n'.join(menu))
+
+
+@menu_action('8', 'Выйти')
 def action_exit():
     sys.exit(0)
 
@@ -114,6 +124,7 @@ def main():
 
 
     action_show_menu()
+
     while True:
         cmd = input('\nprint command: ')
         action = actions.get(cmd)
