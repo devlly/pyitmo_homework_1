@@ -6,7 +6,6 @@ import datetime
 from organazer_code import storage
 
 get_connection = lambda : storage.connect('tasks.sqlite')
-#get_connection1 = lambda : storage.connect('cal.sqlite')
 
 
 Action = namedtuple('Action', ['func', 'name'])
@@ -102,7 +101,7 @@ def action_change():
 def action_show_menu():
     menu = []
 
-    for cmd, action in action.items():
+    for cmd, action_name in actions.items():
         menu.append('{}. {}'.format(cmd, action_name))
 
     print('\n'.join(menu))
@@ -133,3 +132,13 @@ def main():
             action()
         else:
             print('Неизвестная команда')
+
+
+@menu_action('7', 'Показать меню')
+def action_show_menu():
+    menu = []
+'''
+    for cmd, action_name in actions.items():
+        menu.append('{}. {}'.format(cmd, action_name))
+
+    print('\n'.join(menu))'''

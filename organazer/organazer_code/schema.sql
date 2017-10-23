@@ -13,5 +13,5 @@ CREATE TABLE IF NOT EXISTS cal (
     id_tasks INTEGER
 );
 
-CREATE INDEX index_task ON cal (id_tasks);
-CREATE INDEX index_name ON tasks (tasks_name)
+CREATE INDEX IF NOT EXISTS index_task ON cal (id_tasks);
+CREATE INDEX IF NOT EXISTS index_name ON tasks (tasks_name);
